@@ -20,6 +20,27 @@
       "attention": false,
       "date": "03-02-2019",
       "tech": "Sara Wilson"
+    },
+    {
+      "message": "New log",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2020-01-27T20:11:45.473Z",
+      "id": 4
+    },
+    {
+      "message": "Another new log",
+      "attention": true,
+      "tech": "Sam Smith",
+      "date": "2020-01-27T20:12:17.623Z",
+      "id": 5
+    },
+    {
+      "message": "same email",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2020-01-27T20:13:17.636Z",
+      "id": 6
     }
   ],
   "techs": [
