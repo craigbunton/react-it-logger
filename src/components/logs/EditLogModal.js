@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
+import TechSelectOptions from "../techs/TechSelectOptions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
 import M from "materialize-css/dist/js/materialize.min.js";
 import { updateLog } from "../../actions/logActions";
 
 const EditLogModal = ({ current, updateLog }) => {
-  //
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
@@ -21,7 +20,7 @@ const EditLogModal = ({ current, updateLog }) => {
 
   const onSubmit = () => {
     if (message === "" || tech === "") {
-      M.toast({ html: "Please enter a message and select a technician" });
+      M.toast({ html: "Please enter a message and tech" });
     } else {
       const updLog = {
         id: current.id,
@@ -32,27 +31,25 @@ const EditLogModal = ({ current, updateLog }) => {
       };
 
       updateLog(updLog);
-      M.toast({ html: `Log update by ${tech}` });
+      M.toast({ html: `Log updated by ${tech}` });
 
       // Clear Fields
       setMessage("");
-      setAttention(false);
       setTech("");
+      setAttention(false);
     }
   };
 
   return (
     <div id="edit-log-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
-        <h4>Update System Log</h4>
-
+        <h4>Enter System Log</h4>
         <div className="row">
           <div className="input-field">
             <input
               type="text"
               name="message"
               value={message}
-              id="message"
               onChange={e => setMessage(e.target.value)}
             />
           </div>
@@ -69,9 +66,7 @@ const EditLogModal = ({ current, updateLog }) => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>
@@ -93,14 +88,13 @@ const EditLogModal = ({ current, updateLog }) => {
           </div>
         </div>
       </div>
-
       <div className="modal-footer">
         <a
           href="#!"
           onClick={onSubmit}
-          className="modal-close waves-effect waves-light blue btn"
+          className="modal-close waves-effect blue waves-light btn"
         >
-          Update
+          Enter
         </a>
       </div>
     </div>

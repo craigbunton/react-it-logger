@@ -14,7 +14,7 @@ import {
 //   return async dispatch => {
 //     setLoading();
 
-//     const res = await fetch("/logs");
+//     const res = await fetch('/logs');
 //     const data = await res.json();
 
 //     dispatch({
@@ -24,6 +24,7 @@ import {
 //   };
 // };
 
+// Get logs from server
 export const getLogs = () => async dispatch => {
   try {
     setLoading();
@@ -38,13 +39,12 @@ export const getLogs = () => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
 
 // Add new log
-
 export const addLog = log => async dispatch => {
   try {
     setLoading();
@@ -65,13 +65,12 @@ export const addLog = log => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
 
-// Delete Log from server
-
+// Delete log from server
 export const deleteLog = id => async dispatch => {
   try {
     setLoading();
@@ -87,13 +86,12 @@ export const deleteLog = id => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
 
-// Update Log on server
-
+// Update log on server
 export const updateLog = log => async dispatch => {
   try {
     setLoading();
@@ -115,16 +113,16 @@ export const updateLog = log => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
 
-// Search Logs
-
+// Search server logs
 export const searchLogs = text => async dispatch => {
   try {
     setLoading();
+
     const res = await fetch(`/logs?q=${text}`);
     const data = await res.json();
 
@@ -135,27 +133,27 @@ export const searchLogs = text => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
 
-// Set Current log
-
+// Set current log
 export const setCurrent = log => {
   return {
     type: SET_CURRENT,
     payload: log
   };
 };
-// Clear Current log
 
+// Clear current log
 export const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT
   };
 };
 
+// Set loading to true
 export const setLoading = () => {
   return {
     type: SET_LOADING

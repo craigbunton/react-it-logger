@@ -1,25 +1,53 @@
 {
   "logs": [
     {
-      "id": 4,
+      "id": 1,
       "message": "Updated New log",
       "attention": false,
-      "tech": "John Doe",
-      "date": "2020-01-28T11:34:49.202Z"
+      "tech": "Nick Cave",
+      "date": "2020-01-28T21:56:35.042Z"
     },
     {
       "message": "Another new log",
       "attention": true,
       "tech": "Sam Smith",
       "date": "2020-01-27T20:12:17.623Z",
-      "id": 5
+      "id": 2
     },
     {
       "message": "same email",
       "attention": false,
       "tech": "John Doe",
       "date": "2020-01-27T20:13:17.636Z",
-      "id": 6
+      "id": 3
+    },
+    {
+      "message": "Good lead",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2020-01-28T21:21:25.178Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "message": "Mambo Italiano",
+      "attention": true,
+      "tech": "Fred Nurks",
+      "date": "2020-01-29T11:25:44.703Z"
+    },
+    {
+      "id": 6,
+      "message": "If I have no free will how can I be morally culpable, I wonder.",
+      "attention": true,
+      "tech": "Nick Cave",
+      "date": "2020-01-29T11:25:52.650Z"
+    },
+    {
+      "message": "The Good Son",
+      "attention": true,
+      "tech": "Nick Cave",
+      "date": "2020-01-28T21:50:57.000Z",
+      "id": 7
     }
   ],
   "techs": [
@@ -39,7 +67,7 @@
       "lastName": "Wilson"
     },
     {
-      "id": "4",
+      "id": 4,
       "firstName": "Fred",
       "lastName": "Nurks"
     },
@@ -47,11 +75,6 @@
       "id": 5,
       "firstName": "Nick",
       "lastName": "Cave"
-    },
-    {
-      "lastName": "Bargeld",
-      "firstName": "Blixa",
-      "id": 6
     }
   ]
 }
